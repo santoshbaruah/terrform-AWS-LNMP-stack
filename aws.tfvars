@@ -1,0 +1,6 @@
+region =  "eu-central-1"
+instance_type = "t2.micro"
+instance_key = "skb-ec2-key"
+vpc_cidr = "178.0.0.0/16"
+public_subnet_cidr = "178.0.10.0/24"
+profile_name = "default"
