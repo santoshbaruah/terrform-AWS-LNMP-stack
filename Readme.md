@@ -75,6 +75,14 @@ resource "aws_route_table_association" "public_rt_asso" {
   subnet_id      = aws_subnet.public_subnet.id
   route_table_id = aws_route_table.public_rt.id
 }
+
+resource "aws_instance" "web" {
+  ami           = "ami-0233214e13e500f77"
+  instance_type = var.instance_type
+  key_name = var.instance_key
+  subnet_id              = aws_subnet.public_subnet.id
+  security_groups = [aws_security_group.sg.id]
+
 ```
 ## Cloud Init and User Data
 - Objective of the Amazon linux2 EC2 instance is to have the LNMP stack (Linux, Nginx, MySQL, PHP) installed on it, when the instance is created
